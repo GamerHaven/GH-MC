@@ -3,11 +3,7 @@
     "version": "1.16.5",
     "modLoaders": [
       {
-<<<<<<< Updated upstream
-        "id": "forge-36.0.46",
-=======
         "id": "forge-36.1.2",
->>>>>>> Stashed changes
         "primary": true
       }
     ]
@@ -15,11 +11,7 @@
   "manifestType": "minecraftModpack",
   "manifestVersion": 1,
   "name": "GamerHaven Official",
-<<<<<<< Updated upstream
-  "version": "1.5.4b",
-=======
   "version": "1.5.6",
->>>>>>> Stashed changes
   "author": "ATMTeam, DevilzEye",
   "files": [
     {
@@ -34,16 +26,12 @@
     },
     {
       "projectID": 289310,
-<<<<<<< Updated upstream
-      "fileID": 3218857,
-=======
       "fileID": 3248668,
->>>>>>> Stashed changes
       "required": true
     },
     {
       "projectID": 225643,
-      "fileID": 3228527,
+      "fileID": 3233810,
       "required": true
     },
     {
@@ -58,7 +46,7 @@
     },
     {
       "projectID": 348521,
-      "fileID": 3210411,
+      "fileID": 3235778,
       "required": true
     },
     {
@@ -68,11 +56,7 @@
     },
     {
       "projectID": 387638,
-<<<<<<< Updated upstream
-      "fileID": 3184810,
-=======
       "fileID": 3244890,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -102,12 +86,12 @@
     },
     {
       "projectID": 251389,
-      "fileID": 3225375,
+      "fileID": 3239110,
       "required": true
     },
     {
       "projectID": 446870,
-      "fileID": 3223443,
+      "fileID": 3241432,
       "required": true
     },
     {
@@ -172,7 +156,7 @@
     },
     {
       "projectID": 404465,
-      "fileID": 3214262,
+      "fileID": 3237039,
       "required": true
     },
     {
@@ -182,7 +166,7 @@
     },
     {
       "projectID": 404468,
-      "fileID": 3182798,
+      "fileID": 3237174,
       "required": true
     },
     {
@@ -192,7 +176,7 @@
     },
     {
       "projectID": 405593,
-      "fileID": 3173269,
+      "fileID": 3238757,
       "required": true
     },
     {
@@ -217,16 +201,12 @@
     },
     {
       "projectID": 238086,
-<<<<<<< Updated upstream
-      "fileID": 3228679,
-=======
       "fileID": 3247934,
->>>>>>> Stashed changes
       "required": true
     },
     {
       "projectID": 268250,
-      "fileID": 3143267,
+      "fileID": 3235657,
       "required": true
     },
     {
@@ -236,7 +216,7 @@
     },
     {
       "projectID": 400058,
-      "fileID": 3200393,
+      "fileID": 3241113,
       "required": true
     },
     {
@@ -311,7 +291,7 @@
     },
     {
       "projectID": 239286,
-      "fileID": 3231794,
+      "fileID": 3242294,
       "required": true
     },
     {
@@ -331,11 +311,7 @@
     },
     {
       "projectID": 384508,
-<<<<<<< Updated upstream
-      "fileID": 3206649,
-=======
       "fileID": 3245153,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -350,7 +326,7 @@
     },
     {
       "projectID": 231484,
-      "fileID": 3098223,
+      "fileID": 3238962,
       "required": true
     },
     {
@@ -415,11 +391,7 @@
     },
     {
       "projectID": 364466,
-<<<<<<< Updated upstream
-      "fileID": 3225893,
-=======
       "fileID": 3248512,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -439,20 +411,12 @@
     },
     {
       "projectID": 412525,
-<<<<<<< Updated upstream
-      "fileID": 3233321,
-=======
       "fileID": 3245714,
->>>>>>> Stashed changes
       "required": true
     },
     {
       "projectID": 281849,
-<<<<<<< Updated upstream
-      "fileID": 3228145,
-=======
       "fileID": 3247865,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -557,11 +521,7 @@
     },
     {
       "projectID": 443900,
-<<<<<<< Updated upstream
-      "fileID": 3227088,
-=======
       "fileID": 3243608,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -601,7 +561,7 @@
     },
     {
       "projectID": 356801,
-      "fileID": 3151767,
+      "fileID": 3238753,
       "required": true
     },
     {
@@ -636,7 +596,7 @@
     },
     {
       "projectID": 282001,
-      "fileID": 3170424,
+      "fileID": 3236650,
       "required": true
     },
     {
@@ -646,7 +606,7 @@
     },
     {
       "projectID": 438387,
-      "fileID": 3176822,
+      "fileID": 3238759,
       "required": true
     },
     {
@@ -756,7 +716,7 @@
     },
     {
       "projectID": 242998,
-      "fileID": 3231224,
+      "fileID": 3235738,
       "required": true
     },
     {
@@ -766,12 +726,12 @@
     },
     {
       "projectID": 236307,
-      "fileID": 3231823,
+      "fileID": 3239115,
       "required": true
     },
     {
       "projectID": 250832,
-      "fileID": 3179579,
+      "fileID": 3238352,
       "required": true
     },
     {
@@ -801,7 +761,7 @@
     },
     {
       "projectID": 228525,
-      "fileID": 3232951,
+      "fileID": 3241077,
       "required": true
     },
     {
@@ -811,7 +771,7 @@
     },
     {
       "projectID": 342466,
-      "fileID": 3229005,
+      "fileID": 3236518,
       "required": true
     },
     {
@@ -866,16 +826,12 @@
     },
     {
       "projectID": 247560,
-<<<<<<< Updated upstream
-      "fileID": 3197729,
-=======
       "fileID": 3247407,
       "required": true
     },
     {
       "projectID": 55438,
       "fileID": 3081350,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -940,12 +896,12 @@
     },
     {
       "projectID": 233105,
-      "fileID": 3226976,
+      "fileID": 3236516,
       "required": true
     },
     {
       "projectID": 386134,
-      "fileID": 3226218,
+      "fileID": 3237136,
       "required": true
     },
     {
@@ -970,11 +926,7 @@
     },
     {
       "projectID": 342584,
-<<<<<<< Updated upstream
-      "fileID": 3231298,
-=======
       "fileID": 3248140,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -984,16 +936,12 @@
     },
     {
       "projectID": 399558,
-      "fileID": 3132410,
+      "fileID": 3239912,
       "required": true
     },
     {
       "projectID": 240950,
-<<<<<<< Updated upstream
-      "fileID": 3223646,
-=======
       "fileID": 3246479,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -1003,11 +951,7 @@
     },
     {
       "projectID": 368293,
-<<<<<<< Updated upstream
-      "fileID": 3227337,
-=======
       "fileID": 3243398,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -1042,11 +986,7 @@
     },
     {
       "projectID": 419699,
-<<<<<<< Updated upstream
-      "fileID": 3229582,
-=======
       "fileID": 3248258,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -1081,11 +1021,7 @@
     },
     {
       "projectID": 395158,
-<<<<<<< Updated upstream
-      "fileID": 3235664,
-=======
       "fileID": 3247597,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -1096,6 +1032,11 @@
     {
       "projectID": 358304,
       "fileID": 3038361,
+      "required": true
+    },
+    {
+      "projectID": 454372,
+      "fileID": 3235057,
       "required": true
     },
     {
@@ -1125,11 +1066,7 @@
     },
     {
       "projectID": 245506,
-<<<<<<< Updated upstream
-      "fileID": 3233305,
-=======
       "fileID": 3248717,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -1149,11 +1086,7 @@
     },
     {
       "projectID": 406360,
-<<<<<<< Updated upstream
-      "fileID": 3210676,
-=======
       "fileID": 3244357,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -1193,11 +1126,7 @@
     },
     {
       "projectID": 413083,
-<<<<<<< Updated upstream
-      "fileID": 3227169,
-=======
       "fileID": 3243891,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -1212,11 +1141,7 @@
     },
     {
       "projectID": 242195,
-<<<<<<< Updated upstream
-      "fileID": 3215025,
-=======
       "fileID": 3246552,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -1246,7 +1171,7 @@
     },
     {
       "projectID": 394140,
-      "fileID": 3212805,
+      "fileID": 3239732,
       "required": true
     },
     {
@@ -1270,13 +1195,8 @@
       "required": true
     },
     {
-<<<<<<< Updated upstream
-      "projectID": 426558,
-      "fileID": 3230693,
-=======
       "projectID": 389697,
       "fileID": 3203759,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -1296,7 +1216,7 @@
     },
     {
       "projectID": 231095,
-      "fileID": 3232455,
+      "fileID": 3234842,
       "required": true
     },
     {
@@ -1356,20 +1276,12 @@
     },
     {
       "projectID": 314906,
-<<<<<<< Updated upstream
-      "fileID": 3228690,
-=======
       "fileID": 3248884,
->>>>>>> Stashed changes
       "required": true
     },
     {
       "projectID": 297039,
-<<<<<<< Updated upstream
-      "fileID": 3229520,
-=======
       "fileID": 3246908,
->>>>>>> Stashed changes
       "required": true
     },
     {
@@ -1449,7 +1361,7 @@
     },
     {
       "projectID": 364120,
-      "fileID": 3196792,
+      "fileID": 3238754,
       "required": true
     },
     {
