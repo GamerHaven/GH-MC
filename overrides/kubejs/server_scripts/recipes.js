@@ -1,9 +1,6 @@
 events.listen('recipes', function(e) {
-    var mekCrush = e.recipes.mekanism.crushing
-    var mekEnrich = e.recipes.mekanism.enriching
     var pedCrush = e.recipes.pedestals.pedestal_crushing
     var pedSaw = e.recipes.pedestals.pedestal_sawing
-    var mekSaw = e.recipes.mekanism.sawing
 
     function energize(ingredient, result, rCount, power) {
         e.recipes.powah.energizing({
@@ -84,15 +81,70 @@ events.listen('recipes', function(e) {
             'experience': xp
         })
     }
+
+    function multicrush(output, input) {
+        e.recipes.mekanism.crushing(output, input)
+        e.recipes.create.crushing(output, input)
+        e.recipes.immersiveengineering.crusher(output, input)
+        e.recipes.thermal.pulverizer(output, input)
+    }
+
+    function crush(output, input) {
+        e.recipes.mekanism.crushing((output), input)
+    }
+
+    function enrich(output, input) {
+        e.recipes.mekanism.enriching((output), input)
+    }
+
+    function pulverize(output, input) {
+        e.recipes.thermal.pulverizer((output), input)
+    }
+
+    function mainfusion(output, middle, item1, item2, item3, item4, item5, item6, item7, item8) {
+        e.recipes.mysticalagriculture.infusion({
+            input: {
+                item: middle
+            },
+            ingredients: [{
+                    item: item1
+                },
+                {
+                    item: item2
+                },
+                {
+                    item: item3
+                },
+                {
+                    item: item4
+                },
+                {
+                    item: item5
+                },
+                {
+                    item: item6
+                },
+                {
+                    item: item7
+                },
+                {
+                    item: item8
+                }
+            ],
+            result: {
+                item: output
+            }
+        })
+    }
     //Smelting
-    e.smelting(item.of('appliedenergistics2:certus_quartz_crystal'), '#forge:ores/certus_quartz').xp(1).id('kubejs:smelting/certus')
-    e.smelting(item.of('alltheores:platinum_ingot'), 'create:crushed_platinum_ore').xp(1).id('kubejs:smelting/create_platinum')
-    e.smelting(item.of('minecraft:glass'), '#forge:sand').xp(.1).id('kubejs:smelting/sand')
-    e.smelting(item.of('minecraft:leather'), 'kubejs:rotten_leather').xp(.5).id('kubejs:smelting/leather')
-    e.smoking(item.of('minecraft:leather'), 'kubejs:rotten_leather').xp(.5).id('kubejs:smoking/leather')
-    e.smelting(item.of('allthemodium:vibranium_allthemodium_alloy_ingot'), 'allthemodium:vibranium_allthemodium_alloy_dust').xp(.5).id('kubejs:smelting/vibranium_allthemodium_alloy_dust')
-    e.smelting(item.of('allthemodium:unobtainium_allthemodium_alloy_ingot'), 'allthemodium:unobtainium_allthemodium_alloy_dust').xp(.5).id('kubejs:smelting/unobtainium_allthemodium_alloy_dust')
-    e.smelting(item.of('allthemodium:unobtainium_vibranium_alloy_ingot'), 'allthemodium:unobtainium_vibranium_alloy_dust').xp(.5).id('kubejs:smelting/unobtainium_vibranium_alloy_dust')
+    e.smelting('appliedenergistics2:certus_quartz_crystal', '#forge:ores/certus_quartz').xp(1).id('kubejs:smelting/certus')
+    e.smelting('alltheores:platinum_ingot', 'create:crushed_platinum_ore').xp(1).id('kubejs:smelting/create_platinum')
+    e.smelting('minecraft:glass', '#forge:sand').xp(.1).id('kubejs:smelting/sand')
+    e.smelting('minecraft:leather', 'kubejs:rotten_leather').xp(.5).id('kubejs:smelting/leather')
+    e.smoking('minecraft:leather', 'kubejs:rotten_leather').xp(.5).id('kubejs:smoking/leather')
+    e.smelting('allthemodium:vibranium_allthemodium_alloy_ingot', 'allthemodium:vibranium_allthemodium_alloy_dust').xp(.5).id('kubejs:smelting/vibranium_allthemodium_alloy_dust')
+    e.smelting('allthemodium:unobtainium_allthemodium_alloy_ingot', 'allthemodium:unobtainium_allthemodium_alloy_dust').xp(.5).id('kubejs:smelting/unobtainium_allthemodium_alloy_dust')
+    e.smelting('allthemodium:unobtainium_vibranium_alloy_ingot', 'allthemodium:unobtainium_vibranium_alloy_dust').xp(.5).id('kubejs:smelting/unobtainium_vibranium_alloy_dust')
 
     //Misc shaped recipes
     e.shaped('computercraft:turtle_advanced', [
@@ -138,38 +190,6 @@ events.listen('recipes', function(e) {
         S: '#forge:rods',
         P: '#minecraft:planks'
     }).id(`kubejs:ladder`)
-    e.shaped('appliedenergistics2:silicon_press', [
-        'EEE',
-        'EAE',
-        'EEE'
-    ], {
-        'E': 'mysticalagriculture:iron_essence',
-        'A': 'mysticalagriculture:silicon_essence'
-    }).id(`kubejs:silicon_press`)
-    e.shaped('appliedenergistics2:calculation_processor_press', [
-        'EEE',
-        'EAE',
-        'EEE'
-    ], {
-        'E': 'mysticalagriculture:iron_essence',
-        'A': 'mysticalagriculture:certus_quartz_essence'
-    }).id(`kubejs:calculation_press`)
-    e.shaped('appliedenergistics2:engineering_processor_press', [
-        'EEE',
-        'EAE',
-        'EEE'
-    ], {
-        'E': 'mysticalagriculture:iron_essence',
-        'A': 'mysticalagriculture:diamond_essence'
-    }).id(`kubejs:engineering_press`)
-    e.shaped('appliedenergistics2:logic_processor_press', [
-        'EEE',
-        'EAE',
-        'EEE'
-    ], {
-        'E': 'mysticalagriculture:iron_essence',
-        'A': 'mysticalagriculture:gold_essence'
-    }).id(`kubejs:logic_press`)
     e.shaped('minecraft:hopper', [
         'ILI',
         'ILI',
@@ -178,20 +198,20 @@ events.listen('recipes', function(e) {
         'L': '#minecraft:logs',
         'I': '#forge:ingots/iron'
     }).id(`kubejs:hopper`)
-    e.shaped('minecraft:stick', [
+    e.shaped('16x minecraft:stick', [
         'L',
         'L'
     ], {
         'L': '#minecraft:logs'
-    }, 16).id(`kubejs:sticks`)
-    e.shaped('appliedenergistics2:sky_stone_block', [
+    }).id(`kubejs:sticks`)
+    e.shaped('4x appliedenergistics2:sky_stone_block', [
         'BSB',
         'SBS',
         'BSB'
     ], {
         'S': 'minecraft:stone',
         'B': 'minecraft:blackstone'
-    }, 4).id(`kubejs:sky_stone_brick`)
+    }).id(`kubejs:sky_stone_brick`)
     e.shaped('biomesoplenty:flesh', [
         'FFF',
         'FFF',
@@ -208,6 +228,16 @@ events.listen('recipes', function(e) {
         P: 'refinedstorage:improved_processor',
         C: '#refinedstorage:crafter'
     }).id(`kubejs:iron_crafter`)
+    e.shaped(`creativecrafter:creative_crafter`, [
+        `BUB`,
+        `PCP`,
+        `BUB`
+    ], {
+        B: `#forge:storage_blocks/netherite`,
+        P: `extradisks:withering_processor`,
+        C: `extrastorage:netherite_crafter`,
+        U: `#forge:ingots/unobtainium`
+    });
     e.shaped('xreliquary:fertile_lily_pad', [
         'ESE',
         'FLF',
@@ -447,7 +477,8 @@ events.listen('recipes', function(e) {
         'D': '#forge:nether_stars',
         'G': 'botania:gaia_ingot'
     }).id(`kubejs:itemring`)
-    e.shaped(item.of('forbidden_arcanus:iron_chain', 3), [
+    //
+    e.shaped('3x forbidden_arcanus:iron_chain', [
         'N  ',
         ' I ',
         '  N'
@@ -593,7 +624,7 @@ events.listen('recipes', function(e) {
         'b': '#forge:dusts/redstone',
         'n': '#forge:ingots/unobtainium'
     }).id(`kubejs:infinite_storage_part`)
-    e.shaped('solarflux:sp_custom_allthemodium', [
+    e.shaped('2x solarflux:sp_custom_allthemodium', [
         'PPP',
         'SAS',
         'SDS'
@@ -602,8 +633,8 @@ events.listen('recipes', function(e) {
         A: '#forge:storage_blocks/allthemodium',
         D: '#forge:storage_blocks/diamond',
         P: 'solarflux:photovoltaic_cell_4'
-    }, 2).id(`kubejs:allthemodium_solar`)
-    e.shaped('solarflux:sp_custom_vibranium', [
+    }).id(`kubejs:allthemodium_solar`)
+    e.shaped('2x solarflux:sp_custom_vibranium', [
         'PPP',
         'SAS',
         'SAS'
@@ -611,8 +642,8 @@ events.listen('recipes', function(e) {
         S: 'solarflux:sp_custom_allthemodium',
         A: '#forge:storage_blocks/vibranium',
         P: 'solarflux:photovoltaic_cell_5'
-    }, 2).id(`kubejs:vibranium_solar`)
-    e.shaped('solarflux:sp_custom_unobtainium', [
+    }).id(`kubejs:vibranium_solar`)
+    e.shaped('2x solarflux:sp_custom_unobtainium', [
         'PPP',
         'SAS',
         'SAS'
@@ -620,15 +651,88 @@ events.listen('recipes', function(e) {
         S: 'solarflux:sp_custom_vibranium',
         A: '#forge:storage_blocks/unobtainium',
         P: 'solarflux:photovoltaic_cell_6'
-    }, 2).id(`kubejs:unobtainium_solar`)
+    }).id(`kubejs:unobtainium_solar`)
+    //Minecraft
+    e.shaped('minecraft:dragon_egg', [
+        'SSS',
+        'SDS',
+        'SSS'
+    ], {
+        S: 'mysticalagradditions:dragon_egg_chunk',
+        D: 'atmadditions:dragon_soul'
+    })
+    //Tombstone 
+    e.shaped('tombstone:soul_receptacle', [
+        'ABA',
+        'CDC',
+        'AEA'
+    ], {
+        A: 'tombstone:dust_of_vanishing',
+        B: 'tombstone:ankh_of_pray',
+        C: 'minecraft:totem_of_undying',
+        D: 'tombstone:familiar_receptacle',
+        E: 'tombstone:voodoo_poppet'
+    })
+    //Pipez
+    e.shaped('pipez:infinity_upgrade', [
+        'ABA',
+        'BCB',
+        'ABA'
+    ], {
+        A: 'allthemodium:unobtainium_ingot',
+        B: 'compressium:redstone_4',
+        C: 'pipez:ultimate_upgrade'
+    })
+    //MA
+    e.shaped('8x astralsorcery:aquamarine', [
+        'AAA',
+        'A A',
+        'AAA'
+    ], {
+        A: 'mysticalagriculture:aquamarine_essence'
+    }).id(`kubejs:aquamarine_essence`)
+    //Cable Tiers changes
+    var caTypes = [
+        `importer`,
+        `exporter`,
+        `constructor`,
+        `destructor`
+    ];
+    const caTier = (tier, corners, processor, cables) => {
+        caTypes.forEach(caType => {
+            e.shaped(`cabletiers:${tier}_${caType}`, [
+                `a a`,
+                `bcb`,
+                `a a`
+            ], {
+                a: corners,
+                b: processor,
+                c: `${cables}${caType}`
+            });
+        });
+    };
+    caTier(`elite`, `#forge:storage_blocks/iron`, `refinedstorage:improved_processor`, `refinedstorage:`);
+    caTier(`ultra`, `#forge:storage_blocks/diamond`, `refinedstorage:advanced_processor`, `cabletiers:elite_`);
+    caTier(`creative`, `#forge:storage_blocks/netherite`, `extradisks:withering_processor`, `cabletiers:ultra_`);
+    //Creative Transmitter
+    e.shaped('creativewirelesstransmitter:creative_wireless_transmitter', [
+        'ITI',
+        'ICI',
+        'IDI'
+    ], {
+        I: 'allthemodium:unobtainium_ingot',
+        D: 'rsinfinitybooster:dimension_card',
+        C: 'refinedstorage:machine_casing',
+        T: 'refinedstorage:wireless_transmitter'
+    }).id(`kubejs:creative_wireless_transmitter`)
 
     //Misc Shapeless Recipes
-    e.shapeless(item.of('minecraft:clay_ball', 4), 'minecraft:clay').id(`kubejs:clay`)
-    e.shapeless(item.of('minecraft:quartz', 4), 'minecraft:quartz_block').id(`kubejs:quartz`)
+    e.shapeless('4x minecraft:clay_ball', 'minecraft:clay').id(`kubejs:clay`)
+    e.shapeless('4x minecraft:quartz', 'minecraft:quartz_block').id(`kubejs:quartz`)
     e.shapeless('minecraft:chest', '#forge:chests/wooden')
     //e.shapeless(item.of('bluepower:blue_alloy_ingot', 4), ['#forge:dusts/teslatite','#forge:dusts/teslatite','#forge:dusts/teslatite','#forge:ingots/silver'])
     //e.shapeless('kubejs:rotten_leather', ['minecraft:rotten_flesh', 'minecraft:rotten_flesh', 'minecraft:rotten_flesh'])
-    e.shapeless(item.of('kubejs:rotten_leather'), '3x minecraft:rotten_flesh').id(`kubejs:rotten_leather`)
+    e.shapeless('kubejs:rotten_leather', '3x minecraft:rotten_flesh').id(`kubejs:rotten_leather`)
     e.shapeless('appliedenergistics2:interface', 'appliedenergistics2:cable_interface').id(`kubejs:ae_interface`)
 
 
@@ -849,79 +953,67 @@ events.listen('recipes', function(e) {
     //Make bio fuel use tags instead of invidual items
     var bioFuels = [2, 4, 5, 7, 8]
     utils.listOf(bioFuels).forEach(function(bioFuel) {
-        mekCrush(item.of('mekanism:bio_fuel', bioFuel), '#misctags:biofuel' + bioFuel)
+        e.recipes.mekanism.crushing(item.of('mekanism:bio_fuel', bioFuel), '#misctags:biofuel' + bioFuel)
     })
 
-    //Mek Recipes
-    mekCrush(item.of('minecraft:brick', 4), 'minecraft:bricks').id('kubejs:crush/brick')
-    mekCrush(item.of('minecraft:rotten_flesh', 9), 'biomesoplenty:flesh').id('kubejs:crush/flesh_block')
-    mekCrush(item.of('minecraft:magma_cream', 4), 'minecraft:magma_block').id('kubejs:crush/magma_block')
-    mekCrush(item.of('minecraft:blaze_powder', 4), '#forge:rods/blaze').id('kubejs:crush/blaze_rod')
-    mekCrush(item.of('minecraft:quartz', 4), '#forge:storage_blocks/quartz').id('kubejs:crush/quartz_block')
-    mekCrush(item.of('allthemodium:unobtainium_allthemodium_alloy_dust'), 'allthemodium:unobtainium_allthemodium_alloy_ingot').id('kubejs:crush/unobtainium_allthemodium_alloy_ingot')
-    mekCrush(item.of('allthemodium:unobtainium_vibranium_alloy_dust'), 'allthemodium:unobtainium_vibranium_alloy_ingot').id('kubejs:crush/unobtainium_vibranium_alloy_ingot')
-    mekCrush(item.of('allthemodium:vibranium_allthemodium_alloy_dust'), 'allthemodium:vibranium_allthemodium_alloy_ingot').id('kubejs:crush/vibranium_allthemodium_alloy_ingot')
+    //multicrush - mek crusher and thermal pulverizer
+    //multicrush (`output`,`input`)
+    multicrush('4x minecraft:brick', 'minecraft:bricks')
+    multicrush(`9x minecraft:rotten_flesh`, `biomesoplenty:flesh`)
+    multicrush(`4x minecraft:magma_cream`, `minecraft:magma_block`)
+    multicrush(`minecraft:snow_block`, `minecraft:ice`)
+    multicrush(`allthemodium:unobtainium_allthemodium_alloy_dust`, `allthemodium:unobtainium_allthemodium_alloy_ingot`)
+    multicrush(`allthemodium:unobtainium_vibranium_alloy_dust`, `allthemodium:unobtainium_vibranium_alloy_ingot`)
+    multicrush(`allthemodium:vibranium_allthemodium_alloy_dust`, `allthemodium:vibranium_allthemodium_alloy_ingot`)
 
-    mekEnrich(item.of('minecraft:blaze_rod'), [item.of('minecraft:blaze_powder', 4)]).id('kubejs:enrich/blaze_powder')
-    mekEnrich(item.of('powah:uraninite', 2), 'powah:uraninite_ore_poor').id('kubejs:enrich/uraninite_poor')
-    mekEnrich(item.of('powah:uraninite', 4), 'powah:uraninite_ore').id('kubejs:enrich/uraninite')
-    mekEnrich(item.of('powah:uraninite', 8), 'powah:uraninite_ore_dense').id('kubejs:enrich/uraninite_dense')
+    //crush - mek crushing only
+    //crush (`output`, `input`)
+    crush(`4x minecraft:blaze_powder`, `#forge:rods/blaze`)
 
-    mekSaw(item.of('byg:aspen_planks', 6), 'byg:aspen_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_aspen')
-    mekSaw(item.of('byg:aspen_planks', 6), 'byg:stripped_aspen_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_aspen')
-    mekSaw(item.of('byg:baobab_planks', 6), 'byg:baobab_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_baobab')
-    mekSaw(item.of('byg:baobab_planks', 6), 'byg:stripped_baobab_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_baobab')
-    mekSaw(item.of('byg:blue_enchanted_planks', 6), 'byg:blue_enchanted_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_blue_enchanted')
-    mekSaw(item.of('byg:blue_enchanted_planks', 6), 'byg:stripped_blue_enchanted_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_blue_enchanted')
-    mekSaw(item.of('byg:cherry_planks', 6), 'byg:cherry_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_cherry')
-    mekSaw(item.of('byg:cherry_planks', 6), 'byg:stripped_cherry_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_cherry')
-    mekSaw(item.of('byg:cika_planks', 6), 'byg:cika_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_cika')
-    mekSaw(item.of('byg:cika_planks', 6), 'byg:stripped_cika_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_cika')
-    mekSaw(item.of('byg:cypress_planks', 6), 'byg:cypress_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_cypress')
-    mekSaw(item.of('byg:cypress_planks', 6), 'byg:stripped_cypress_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_cypress')
-    mekSaw(item.of('byg:ebony_planks', 6), 'byg:ebony_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_ebony')
-    mekSaw(item.of('byg:ebony_planks', 6), 'byg:stripped_ebony_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_ebony')
-    mekSaw(item.of('byg:ether_planks', 6), 'byg:ether_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_ether')
-    mekSaw(item.of('byg:ether_planks', 6), 'byg:stripped_ether_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_ether')
-    mekSaw(item.of('byg:fir_planks', 6), 'byg:fir_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_fir')
-    mekSaw(item.of('byg:fir_planks', 6), 'byg:stripped_fir_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_fir')
-    mekSaw(item.of('byg:green_enchanted_planks', 6), 'byg:green_enchanted_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_green_enchanted')
-    mekSaw(item.of('byg:green_enchanted_planks', 6), 'byg:stripped_green_enchanted_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_green_enchanted')
-    mekSaw(item.of('byg:holly_planks', 6), 'byg:holly_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_holly')
-    mekSaw(item.of('byg:holly_planks', 6), 'byg:stripped_holly_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_holly')
-    mekSaw(item.of('byg:jacaranda_planks', 6), 'byg:jacaranda_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_jacaranda')
-    mekSaw(item.of('byg:jacaranda_planks', 6), 'byg:stripped_jacaranda_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_jacaranda')
-    mekSaw(item.of('byg:lament_planks', 6), 'byg:lament_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_lament')
-    mekSaw(item.of('byg:lament_planks', 6), 'byg:stripped_lament_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_lament')
-    mekSaw(item.of('byg:mahogany_planks', 6), 'byg:mahogany_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_mahogany')
-    mekSaw(item.of('byg:mahogany_planks', 6), 'byg:stripped_mahogany_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_mahogany')
-    mekSaw(item.of('byg:mangrove_planks', 6), 'byg:mangrove_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_mangrove')
-    mekSaw(item.of('byg:mangrove_planks', 6), 'byg:stripped_mangrove_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_mangrove')
-    mekSaw(item.of('byg:maple_planks', 6), 'byg:maple_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_maple')
-    mekSaw(item.of('byg:maple_planks', 6), 'byg:stripped_maple_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_maple')
-    mekSaw(item.of('byg:nightshade_planks', 6), 'byg:nightshade_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_nightshade')
-    mekSaw(item.of('byg:nightshade_planks', 6), 'byg:stripped_nightshade_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_nightshade')
-    mekSaw(item.of('byg:palm_planks', 6), 'byg:palm_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_palm')
-    mekSaw(item.of('byg:palm_planks', 6), 'byg:stripped_palm_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_palm')
-    mekSaw(item.of('minecraft:birch_planks', 6), 'byg:palo_verde_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_palo_verde')
-    mekSaw(item.of('minecraft:birch_planks', 6), 'byg:stripped_palo_verde_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_palo_verde')
-    mekSaw(item.of('byg:pine_planks', 6), 'byg:pine_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_pine')
-    mekSaw(item.of('byg:pine_planks', 6), 'byg:stripped_pine_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_pine')
-    mekSaw(item.of('byg:rainbow_eucalyptus_planks', 6), 'byg:rainbow_eucalyptus_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_rainbow_eucalyptus')
-    mekSaw(item.of('byg:rainbow_eucalyptus_planks', 6), 'byg:stripped_rainbow_eucalyptus_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_rainbow_eucalyptus')
-    mekSaw(item.of('byg:redwood_planks', 6), 'byg:redwood_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_redwood')
-    mekSaw(item.of('byg:redwood_planks', 6), 'byg:stripped_redwood_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_redwood')
-    mekSaw(item.of('byg:skyris_planks', 6), 'byg:skyris_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_skyris')
-    mekSaw(item.of('byg:skyris_planks', 6), 'byg:stripped_skyris_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_skyris')
-    mekSaw(item.of('byg:willow_planks', 6), 'byg:willow_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_willow')
-    mekSaw(item.of('byg:willow_planks', 6), 'byg:stripped_willow_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_willow')
-    mekSaw(item.of('byg:witch_hazel_planks', 6), 'byg:witch_hazel_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_witch_hazel')
-    mekSaw(item.of('byg:witch_hazel_planks', 6), 'byg:stripped_witch_hazel_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_witch_hazel')
-    mekSaw(item.of('byg:zelkova_planks', 6), 'byg:zelkova_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_zelkova')
-    mekSaw(item.of('byg:zelkova_planks', 6), 'byg:stripped_zelkova_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_stripped_zelkova')
-    mekSaw(item.of('minecraft:oak_planks', 6), 'byg:withering_oak_log', Item.of('mekanism:sawdust').withChance(0.25)).id('kubejs:saw/byg_log_withering_oak')
-    mekSaw(item.of('mekanism:sawdust', 8), 'byg:imbued_nightshade_log').id('kubejs:saw/byg_log_imbued_nightshade')
+    //enrich - mek enriching 
+    //enrich (`output`, `input`)
+    enrich(`minecraft:blaze_rod`, `4x minecraft:blaze_powder`)
 
+    //pulverize - thermal pulverizer only
+    //pulverize (`output`, `input`)
+
+    //add byg logs to mek sawmill
+    var saw = [
+        'aspen',
+        'baobab',
+        'blue_enchanted',
+        'cherry',
+        'cika',
+        'cypress',
+        'ebony',
+        'ether',
+        'fir',
+        'green_enchanted',
+        'holly',
+        'jacaranda',
+        'lament',
+        'mahogany',
+        'mangrove',
+        'maple',
+        'nightshade',
+        'palm',
+        'pine',
+        'rainbow_eucalyptus',
+        'redwood',
+        'skyris',
+        'willow',
+        'witch_hazel',
+        'zelkova'
+    ]
+    saw.forEach(type => {
+        e.recipes.mekanism.sawing((`6x byg:${type}_planks`), [`byg:stripped_${type}_log`, `byg:${type}_log`], Item.of('mekanism:sawdust').withChance(0.25)).id(`kubejs:saw/byg_log_${type}`)
+    })
+    e.recipes.mekanism.sawing((`6x minecraft:oak_planks`), `byg:withering_oak_log`, Item.of('mekanism:sawdust').withChance(0.25)).id(`kubejs:saw/byg_log_withering_oak`)
+    e.recipes.mekanism.sawing((`8x mekanism:sawdust`), `byg:imbued_nightshade_log`, ).id(`kubejs:saw/byg_log_imbued_nightshade`)
+    e.recipes.mekanism.sawing((`6x minecraft:birch_planks`), [`byg:stripped_palo_verde_log`, `byg:palo_verde_log`], Item.of('mekanism:sawdust').withChance(0.25)).id(`kubejs:saw/byg_log_palo_verde`)
+
+    e.recipes.thermal.pyrolyzer([fluid.of('immersiveengineering:creosote',250),'minecraft:charcoal'], '#minecraft:logs')
+    e.recipes.thermal.pyrolyzer([fluid.of('immersiveengineering:creosote',5000),'immersiveengineering:coke'], 'minecraft:coal_block')
     //botania
     e.recipes.botania.runic_altar({
         output: {
@@ -975,44 +1067,14 @@ events.listen('recipes', function(e) {
             }
         ]
     }).id('kubejs:petal_apothecary/mass_of_wills')
-    //MA
-    e.recipes.mysticalagriculture.infusion({
-        input: {
-            item: 'botania:overgrowth_seed'
-        },
-        ingredients: [{
-                item: 'botania:gaia_ingot'
-            },
-            {
-                item: 'mysticalagradditions:insanium_block'
-            },
-            {
-                item: 'botania:gaia_ingot'
-            },
-            {
-                item: 'mysticalagradditions:insanium_block'
-            },
-            {
-                item: 'botania:gaia_ingot'
-            },
-            {
-                item: 'mysticalagradditions:insanium_block'
-            },
-            {
-                item: 'botania:gaia_ingot'
-            },
-            {
-                item: 'mysticalagradditions:insanium_block'
-            }
-        ],
-        result: {
-            item: 'kubejs:magical_soil'
-        }
-    }).id('kubejs:infusion/magical_soil')
+
+    //ma infusion
+    //mainfusion (output,middle,item1,item2,item3,item4,item5,item6,item7,item8)
+    mainfusion('kubejs:magical_soil', 'botania:overgrowth_seed', 'botania:gaia_ingot', 'mysticalagradditions:insanium_block', 'botania:gaia_ingot', 'mysticalagradditions:insanium_block', 'botania:gaia_ingot', 'mysticalagradditions:insanium_block', 'botania:gaia_ingot', 'mysticalagradditions:insanium_block')
 
     //Custom Blocks
     function customBlock(block, item) {
-        e.shapeless(item, block, 9)
+        e.shapeless(`9x ${item}`, block)
         e.shaped(block, [
             'AAA',
             'AAA',

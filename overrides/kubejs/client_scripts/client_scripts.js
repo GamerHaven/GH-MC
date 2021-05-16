@@ -106,12 +106,23 @@ onEvent(`jei.hide.items`, e => {
         `mininggadgets:minerslight`,
 
         `rats:ratlantis_portal`,
+        `iceandfire:silver_ingot`,
+        `iceandfire:copper_ingot`,
+        `tconstruct:copper_ingot`,
+        `tmechworks:copper_ingot`,
+        `tmechworks:aluminum_ingot`,
 
-        'eidolon:sulfur',
-        'eidolon:lead_ore',
-        'eidolon:lead_ingot',
-        'eidolon:lead_block',
-        'eidolon:lead_nugget'
+        `eidolon:sulfur`,
+        `eidolon:lead_ore`,
+        `eidolon:lead_ingot`,
+        `eidolon:lead_block`,
+        `eidolon:lead_nugget`,
+
+        /resourcefulbees:.+_bee_spawn_egg/,
+        `twilightforest:uncrafting_table`,
+        `mob_grinding_utils:mob_swab`,
+        `mob_grinding_utils:mob_swab_used`,
+        `mob_grinding_utils:gm_chicken_feed`
     ]);
 
     colors.forEach(color => {
@@ -121,7 +132,11 @@ onEvent(`jei.hide.items`, e => {
             ]);
         });
     });
-
+    colors.forEach(color => {
+        e.hide([
+            `creativewirelesstransmitter:${color}_creative_wireless_transmitter`
+        ]);
+    });
     const hideMetal = (mod, name, types) => {
         types.forEach(type => {
             const typeFirst = ['mekanism', 'immersiveengineering'];
@@ -191,6 +206,20 @@ onEvent(`jei.hide.items`, e => {
     hideStuff(`mysticalagriculture`, `seeds`, [`basalz`, `blazing_crystal`, `blitz`, `blizz`, `brass`, `bronze`, `compressed_iron`, `constantan`, `crimson_steel`, `chrome`, `electrum`, `elementium`, `enderium`, `ender_biotite`, `energized_steel`, `fluix`, `graphite`, `hop_graphite`, `invar`, `iridium`, `lumium`, `manasteel`, `niotic_crystal`, `nitro_crystal`, `oratchalcum`, `quartz_enriched_iron`, `refined_glowstone`, `refined_obsidian`, `rock_crystal`, `rubber`, `signalum`, `silicon`, `sky_stone`, `spirited_crystal`, `starmetal`, `steel`, `sulfur`, `terrasteel`, `titanium`, `tungsten`, `mithril`]);
     hideStuff(`mysticalagriculture`, `essence`, [`basalz`, `blazing_crystal`, `blitz`, `blizz`, `brass`, `bronze`, `compressed_iron`, `constantan`, `crimson_steel`, `chrome`, `electrum`, `elementium`, `enderium`, `ender_biotite`, `energized_steel`, `fluix`, `graphite`, `hop_graphite`, `invar`, `iridium`, `lumium`, `manasteel`, `niotic_crystal`, `nitro_crystal`, `oratchalcum`, `quartz_enriched_iron`, `refined_glowstone`, `refined_obsidian`, `rock_crystal`, `rubber`, `signalum`, `silicon`, `sky_stone`, `spirited_crystal`, `starmetal`, `steel`, `sulfur`, `terrasteel`, `titanium`, `tungsten`, `mithril`]);
 
+    var eggs = [
+        'dragonic',
+        'allthemodium',
+        'vibranium',
+        'unobtainium',
+        'soul_lava',
+    ]
+    eggs.forEach(type => {
+        onEvent(`jei.add.items`, e => {
+            e.add([
+                `resourcefulbees:${type}_bee_spawn_egg`
+            ]);
+        });
+    })
 });
 
 onEvent(`item.tooltip`, e => {
@@ -198,4 +227,6 @@ onEvent(`item.tooltip`, e => {
         e.add(`refinedstorage:${refin}`, `Right click or craft with a dye to color`);
     });
     e.add(`pedestals:pedestal/stone333`, [`Press show uses(default U) key on §6§lColored Pallet§r`, `to show different colored pedestals you can make`]);
+    e.add(`creativewirelesstransmitter:creative_wireless_transmitter`, [`Right click or craft with a dye to color`]);
+    e.add(`#pedestals:upgrades`, `Hold upgrades in off-hand to apply them`)
 });

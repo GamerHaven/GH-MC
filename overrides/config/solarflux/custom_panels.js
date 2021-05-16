@@ -31,38 +31,30 @@
 *   - you can have a line "define a_key !value!" to make the compiler replace all a_key with !value! at runtime.
 */
 
+define func function
+define english "en_us"
+
 /** This function is called when mod is being constructed */
-function init() {
+func init()
+{
+	// Example: (textures are extracted in /textures/ by default), uncomment to try it out! (Requires game restart)
+	/*
 	panel()
-		.name("allthemodium")
+		.name("example")
 		.height(8 / 16.0)
-		.generation("" + (512 * 4))
-		.capacity("" + (8000000 * 4))
-		.transfer("" + (512 * 4 * 8))
+		.generation("8388608")
+		.capacity("3355443200")
+		.transfer("50331648")
 	.buildAndRegister()
 		.langBuilder()
-			.put("en_us", "Allthemodium Solar Panel")
-			.build();
-
-	panel()
-		.name("vibranium")
-		.height(8 / 16.0)
-		.generation("" + (512 * 4 * 4))
-		.capacity("" + (8000000 * 4 * 2))
-		.transfer("" + (512 * 4 * 8 * 4))
-	.buildAndRegister()
-		.langBuilder()
-			.put("en_us", "Vibranium Solar Panel")
-			.build();
-
-	panel()
-		.name("unobtainium")
-		.height(8 / 16.0)
-		.generation("" + (512 * 4 * 4 * 4))
-		.capacity("" + (8000000 * 4 * 2 * 2))
-		.transfer("" + (512 * 4 * 8 * 4 * 4))
-	.buildAndRegister()
-		.langBuilder()
-			.put("en_us", "Unobtainium Solar Panel")
-			.build();
+			.put(english, "Example Solar Panel")
+			.build()
+		.recipeBuilder()
+			.shape("ppp", "8c8", "8h8")
+			.bind('p', item("solarflux", "photovoltaic_cell_6"))
+			.bind('8', item("solarflux:sp_8"))
+			.bind('c', item("chorus_fruit"))
+			.bind('h', item("dragon_head"))
+		.build(2);
+	*/
 }

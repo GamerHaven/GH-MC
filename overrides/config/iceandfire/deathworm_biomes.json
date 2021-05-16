@@ -1,11 +1,16 @@
 {
   "biomes": [
     [
-    {
-      "type": "REGISTRY_NAME",
-      "negate": false,
-      "value": "allthemodium:desert_hills"
-    }
+      {
+        "type": "BIOME_DICT",
+        "negate": false,
+        "value": "overworld"
+      },
+      {
+        "type": "BIOME_CATEGORY",
+        "negate": false,
+        "value": "desert"
+      }
     ]
   ]
 }

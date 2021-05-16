@@ -2,9 +2,29 @@
   "biomes": [
     [
       {
-        "type": "REGISTRY_NAME",
+        "type": "BIOME_DICT",
         "negate": false,
-        "value": "allthemodium:soul_sand_valley"
+        "value": "overworld"
+      },
+      {
+        "type": "BIOME_DICT",
+        "negate": true,
+        "value": "ocean"
+      },
+      {
+        "type": "BIOME_CATEGORY",
+        "negate": true,
+        "value": "ocean"
+      },
+      {
+        "type": "BIOME_DICT",
+        "negate": true,
+        "value": "beach"
+      },
+      {
+        "type": "BIOME_CATEGORY",
+        "negate": true,
+        "value": "beach"
       }
     ]
   ]
