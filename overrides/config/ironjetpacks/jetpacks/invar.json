@@ -3,7 +3,7 @@
   "disable": false,
   "tier": 3,
   "color": "929d97",
-  "armorPoints": 3,
+  "armorPoints": 4,
   "enchantability": 15,
   "craftingMaterial": "tag:forge:ingots/invar",
   "rarity": 0,
@@ -15,6 +15,5 @@
   "speedHoverDescend": 0.34,
   "speedHover": 0.03,
   "sprintSpeedMulti": 1.5,
-  "sprintSpeedMultiVertical": 1.0,
   "sprintFuelMulti": 3.2
 }

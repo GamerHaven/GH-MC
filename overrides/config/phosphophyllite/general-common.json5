@@ -1,10 +1,10 @@
 {
     GUI: {
         /* 
-         * Valid range: [50,)
+         * Min: 50
          * Default: 200
          */
-        UpdateIntervalMS: 200.0,
+        UpdateIntervalMS: 200,
 
     },
 

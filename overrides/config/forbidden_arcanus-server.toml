@@ -96,11 +96,7 @@
 		generate = true
 
 	[gen.yellow_orchid]
-		#Generate Yellow Orchids? [default: true]
-		generate = true
-
-	[gen.petrified_root]
-		#Generate Petrified Roots? [default: true]
+		#Generate Yellow Orchid? [default: true]
 		generate = true
 
 [block]
