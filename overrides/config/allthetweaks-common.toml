@@ -6,7 +6,7 @@
 
 [discord]
 	#Enable Discord Rich Prescence
-	discord = true
+	discord = false
 
 [packversionmaj]
 	#Pack Release Version Format : X
@@ -21,5 +21,5 @@
 [packversionminrev]
 	#Pack Minor Version Revision : X
 	#Range: 0 ~ 32768
-	minorrev = 5
+	minorrev = 7
 

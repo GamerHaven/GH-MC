@@ -11,7 +11,7 @@
   "manifestType": "minecraftModpack",
   "manifestVersion": 1,
   "name": "GamerHaven Official",
-  "version": "1.6.5",
+  "version": "1.6.7",
   "author": "ATMTeam, DevilzEye",
   "files": [
     {
@@ -421,7 +421,7 @@
     },
     {
       "projectID": 364466,
-      "fileID": 3325010,
+      "fileID": 3330044,
       "required": true
     },
     {
@@ -1075,13 +1075,13 @@
       "required": true
     },
     {
-      "projectID": 395158,
-      "fileID": 3293822,
+      "projectID": 245480,
+      "fileID": 3260551,
       "required": true
     },
     {
-      "projectID": 245480,
-      "fileID": 3260551,
+      "projectID": 395158,
+      "fileID": 3293822,
       "required": true
     },
     {
@@ -1125,23 +1125,13 @@
       "required": true
     },
     {
-      "projectID": 301356,
-      "fileID": 3033223,
-      "required": true
-    },
-    {
       "projectID": 245506,
       "fileID": 3325522,
       "required": true
     },
     {
-      "projectID": 228756,
-      "fileID": 3105315,
-      "required": true
-    },
-    {
-      "projectID": 60089,
-      "fileID": 3202662,
+      "projectID": 301356,
+      "fileID": 3033223,
       "required": true
     },
     {
@@ -1150,18 +1140,28 @@
       "required": true
     },
     {
+      "projectID": 60089,
+      "fileID": 3202662,
+      "required": true
+    },
+    {
+      "projectID": 228756,
+      "fileID": 3105315,
+      "required": true
+    },
+    {
       "projectID": 406360,
       "fileID": 3244357,
       "required": true
     },
     {
-      "projectID": 377322,
-      "fileID": 3246997,
+      "projectID": 418651,
+      "fileID": 3159438,
       "required": true
     },
     {
-      "projectID": 418651,
-      "fileID": 3159438,
+      "projectID": 377322,
+      "fileID": 3246997,
       "required": true
     },
     {
@@ -1190,13 +1190,13 @@
       "required": true
     },
     {
-      "projectID": 353882,
-      "fileID": 3177116,
+      "projectID": 413083,
+      "fileID": 3280659,
       "required": true
     },
     {
-      "projectID": 413083,
-      "fileID": 3280659,
+      "projectID": 353882,
+      "fileID": 3177116,
       "required": true
     },
     {
@@ -1235,13 +1235,13 @@
       "required": true
     },
     {
-      "projectID": 353928,
-      "fileID": 3318612,
+      "projectID": 394140,
+      "fileID": 3239732,
       "required": true
     },
     {
-      "projectID": 394140,
-      "fileID": 3239732,
+      "projectID": 353928,
+      "fileID": 3318612,
       "required": true
     },
     {
@@ -1360,13 +1360,13 @@
       "required": true
     },
     {
-      "projectID": 283644,
-      "fileID": 3314315,
+      "projectID": 324973,
+      "fileID": 3160501,
       "required": true
     },
     {
-      "projectID": 324973,
-      "fileID": 3160501,
+      "projectID": 283644,
+      "fileID": 3314315,
       "required": true
     },
     {
@@ -1375,13 +1375,13 @@
       "required": true
     },
     {
-      "projectID": 390880,
-      "fileID": 3120970,
+      "projectID": 400933,
+      "fileID": 3273512,
       "required": true
     },
     {
-      "projectID": 400933,
-      "fileID": 3273512,
+      "projectID": 390880,
+      "fileID": 3120970,
       "required": true
     },
     {
