@@ -1,6 +1,6 @@
 //priority: 999
 events.listen('recipes', e => {
-    var idRemove = [
+    const idRemove = [
         'minecraft:comparator',
         'minecraft:glass',
 
@@ -19,7 +19,7 @@ events.listen('recipes', e => {
         'engineerstools:crushing/aluminium_grit_crushing_recipe',
 
         'xreliquary:alkahestry/crafting/nether_star',
-		'xreliquary:fertile_lily_pad',
+        'xreliquary:fertile_lily_pad',
 
         'thermal:machine/press/packing2x2/press_honeycomb_packing',
         'thermal:machine/press/unpacking/press_honeycomb_unpacking',
@@ -151,14 +151,18 @@ events.listen('recipes', e => {
         'creativecrafter:creative_crafter',
         'creativewirelesstransmitter:creative_wireless_transmitter',
         'thermal:machine/pyrolyzer/pyrolyzer_coal',
-        'thermal:machine/pyrolyzer/pyrolyzer_logs'
+        'thermal:machine/pyrolyzer/pyrolyzer_logs',
+        'mekanism:mekasuit_helmet',
+        'mekanism:mekasuit_bodyarmor',
+        'mekanism:mekasuit_pants',
+        'mekanism:mekasuit_boots',
 
-    ];
+    ]
     idRemove.forEach(iR => {
         e.remove({
             id: iR
-        });
-    });
+        })
+    })
     //Recipe removals
     e.remove({
         output: [
@@ -192,24 +196,24 @@ events.listen('recipes', e => {
             'titanium:gold_gear',
             'titanium:diamond_gear',
         ]
-    });
+    })
     //Remove via mod name
     var modRemove = [
         `cabletiers`,
-    ];
+    ]
     modRemove.forEach(mR => {
         e.remove({
             mod: mR
-        });
-    });
+        })
+    })
     e.remove({
         input: [
             'appliedenergistics2:flour'
         ]
-    });
+    })
     e.remove({
         type: 'xreliquary:alkahestry_charging'
-    });
+    })
     e.remove({
         id: 'appliedenergistics2:grinder/flour'
     })
@@ -243,4 +247,4 @@ events.listen('recipes', e => {
     e.remove({
         output: 'mekanism:bio_fuel'
     })
-});
+})
