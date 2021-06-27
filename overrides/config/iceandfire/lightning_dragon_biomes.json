@@ -1,16 +1,40 @@
 {
   "biomes": [
     [
-    {
-      "type": "REGISTRY_NAME",
-      "negate": false,
-      "value": "allthemodium:desert"
-    },
-    {
-      "type": "REGISTRY_NAME",
-      "negate": false,
-      "value": "allthemodium:desert_hills"
-    }
+      {
+        "type": "BIOME_DICT",
+        "negate": false,
+        "value": "overworld"
+      },
+      {
+        "type": "BIOME_DICT",
+        "negate": false,
+        "value": "jungle"
+      }
+    ],
+    [
+      {
+        "type": "BIOME_DICT",
+        "negate": false,
+        "value": "overworld"
+      },
+      {
+        "type": "BIOME_DICT",
+        "negate": false,
+        "value": "mesa"
+      }
+    ],
+    [
+      {
+        "type": "BIOME_DICT",
+        "negate": false,
+        "value": "overworld"
+      },
+      {
+        "type": "BIOME_DICT",
+        "negate": false,
+        "value": "savanna"
+      }
     ]
   ]
 }
