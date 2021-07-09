@@ -32,7 +32,7 @@
 		[world.ores.copper]
 			#Number of veins per chunk
 			#Range: > 0
-			veinCount = 8
+			veinCount = 0
 			#Size of veins
 			#Range: 0 ~ 100
 			veinSize = 8
@@ -46,7 +46,7 @@
 		[world.ores.tin]
 			#Number of veins per chunk
 			#Range: > 0
-			veinCount = 8
+			veinCount = 0
 			#Size of veins
 			#Range: 0 ~ 100
 			veinSize = 8
@@ -60,7 +60,7 @@
 		[world.ores.silver]
 			#Number of veins per chunk
 			#Range: > 0
-			veinCount = 4
+			veinCount = 0
 			#Size of veins
 			#Range: 0 ~ 100
 			veinSize = 8
@@ -74,7 +74,7 @@
 		[world.ores.lead]
 			#Number of veins per chunk
 			#Range: > 0
-			veinCount = 4
+			veinCount = 0
 			#Size of veins
 			#Range: 0 ~ 100
 			veinSize = 8
@@ -88,7 +88,7 @@
 		[world.ores.nickel]
 			#Number of veins per chunk
 			#Range: > 0
-			veinCount = 1
+			veinCount = 0
 			#Size of veins
 			#Range: 0 ~ 100
 			veinSize = 6
@@ -102,7 +102,7 @@
 		[world.ores.platinum]
 			#Number of veins per chunk
 			#Range: > 0
-			veinCount = 1
+			veinCount = 0
 			#Size of veins
 			#Range: 0 ~ 100
 			veinSize = 8
@@ -116,7 +116,7 @@
 		[world.ores.zinc]
 			#Number of veins per chunk
 			#Range: > 0
-			veinCount = 4
+			veinCount = 0
 			#Size of veins
 			#Range: 0 ~ 100
 			veinSize = 8
@@ -144,7 +144,7 @@
 		[world.ores.bauxite]
 			#Number of veins per chunk
 			#Range: > 0
-			veinCount = 6
+			veinCount = 0
 			#Size of veins
 			#Range: 0 ~ 100
 			veinSize = 8
@@ -158,7 +158,7 @@
 		[world.ores.uranium]
 			#Number of veins per chunk
 			#Range: > 0
-			veinCount = 1
+			veinCount = 0
 			#Size of veins
 			#Range: 0 ~ 100
 			veinSize = 4

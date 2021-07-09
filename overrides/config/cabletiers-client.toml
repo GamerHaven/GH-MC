@@ -1,0 +1,49 @@
+#
+#Elite Exporter Speed
+#Range: 1 ~ 10
+eliteexporterspeed = 2
+#
+#Elite Importer Speed
+#Range: 1 ~ 10
+eliteimporterspeed = 2
+#
+#Elite Constructor Speed
+#Range: 1 ~ 10
+eliteconstructorspeed = 2
+#
+#Elite Destructor Speed
+#Range: 1 ~ 10
+elitedestructorspeed = 2
+#
+#Ultra Exporter Speed
+#Range: 1 ~ 10
+ultraexporterspeed = 6
+#
+#Ultra Importer Speed
+#Range: 1 ~ 10
+ultraimporterspeed = 6
+#
+#Ultra Constructor Speed
+#Range: 1 ~ 10
+ultraconstructorspeed = 6
+#
+#Ultra Destructor Speed
+#Range: 1 ~ 10
+ultradestructorspeed = 6
+#
+#Creative Exporter Speed
+#Range: 1 ~ 10
+creativeexporterspeed = 10
+#
+#Creative Importer Speed
+#Range: 1 ~ 10
+creativeimporterspeed = 10
+#
+#Creative Constructor Speed
+#Range: 1 ~ 10
+creativeconstructorspeed = 10
+#
+#Creative Destructor Speed
+#Range: 1 ~ 10
+creativedestructorspeed = 10
+

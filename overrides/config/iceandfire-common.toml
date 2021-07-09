@@ -19,9 +19,9 @@
 
 	[Generation.Ores]
 		#Whether to generate copper ore or not
-		"Generate Copper Ore" = true
+		"Generate Copper Ore" = false
 		#Whether to generate silver ore or not
-		"Generate Silver Ore" = true
+		"Generate Silver Ore" = false
 		#Whether to generate sapphire ore or not
 		"Generate Sapphire Ore" = true
 		#Whether to generate amethyst ore or not
@@ -414,7 +414,7 @@
 		"Ghost Spawn from PvP deaths" = true
 		#Villager Scribe House generation weight. Lower = lower chance to spawn
 		#Range: 30 ~ 10000
-		"Villager Scribe House Weight" = 1
+		"Villager Scribe House Weight" = 30
 
 [Items]
 	#Default attack strength of a dragonsteel sword.
